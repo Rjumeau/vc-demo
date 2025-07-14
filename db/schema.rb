@@ -26,6 +26,10 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_13_145436) do
     t.string "last_name"
     t.integer "tickets_solved_count", default: 0
     t.integer "role", default: 0
+    t.string "image_url"
+    t.string "prefered_topic"
+    t.boolean "available", default: false
+    t.integer "batch_count"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
