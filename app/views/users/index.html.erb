@@ -9,57 +9,7 @@
   <div class="row">
     <% @users.each do |user| %>
       <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <!-- Avatar -->
-            <div class="mb-3">
-              <%= image_tag user.image_url,
-                  alt: user.full_name,
-                  class: "rounded-circle object-fit-cover",
-                  width: 80,
-                  height: 80
-              %>
-            </div>
-
-            <h5 class="card-title mb-1">
-              <%= user.full_name %>
-            </h5>
-
-            <div class="mb-2">
-              <% if user.teacher_assistant? %>
-                <span class="badge bg-secondary">TA</span>
-              <% else %>
-                <span class="badge bg-primary">Teacher</span>
-              <% end %>
-            </div>
-
-            <div class="mb-3">
-              <% if user.available? %>
-                <span class="badge bg-success">
-                  <i class="fas fa-circle"></i> Disponible
-                </span>
-              <% else %>
-                <span class="badge bg-danger">
-                  <i class="fas fa-circle"></i> Non disponible
-                </span>
-              <% end %>
-            </div>
-
-            <div class="row text-center mb-3">
-              <div class="col-6">
-                <div class="small text-muted">Tickets résolus</div>
-                <div class="fw-bold text-primary"><%= user.tickets_solved_count %></div>
-              </div>
-            </div>
-
-            <div class="btn-group w-100">
-              <%= link_to "Voir profil", user_path(user),
-                  class: "btn btn-outline-primary btn-sm" %>
-              <%= link_to "Contacter", "#",
-                  class: "btn btn-outline-secondary btn-sm" %>
-            </div>
-          </div>
-        </div>
+        <%= render "user_card_small", user: user %>
       </div>
     <% end %>
   </div>
@@ -68,8 +18,6 @@
       <div class="col-12 text-center">
         <div class="alert alert-info">
           <h4>Aucun utilisateur trouvé</h4>
-          <p>Il n'y a actuellement aucun utilisateur dans la base de données.</p>
-          <%= link_to "Créer un utilisateur", new_user_path, class: "btn btn-primary" %>
         </div>
       </div>
     </div>

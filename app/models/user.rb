@@ -11,12 +11,18 @@ class User < ApplicationRecord
 
   scope :teaching_staff, -> { where.not(role: :batch_manager)}
 
+  TOPICS = ["Ruby & Ruby on Rails", "Javascript", "HTML & CSS", "Projects"].freeze
+
   def full_name
     "#{first_name} #{last_name}".strip
   end
 
   def batch_count_sentence
     return "Not an alumni" unless batch_count
-    "Batch #{batch_count}"
+    "##{batch_count}"
+  end
+
+  def image_url_displayed
+    image_url.presence || "default-avatar.jpg"
   end
 end

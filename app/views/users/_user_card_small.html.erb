@@ -1,0 +1,41 @@
+<div class="card h-100 shadow-sm">
+  <div class="card-body text-center">
+    <div class="mb-3">
+      <%= image_tag user.image_url_displayed,
+          alt: user.full_name,
+          class: "rounded-circle object-fit-cover",
+          width: 80,
+          height: 80
+      %>
+    </div>
+
+    <h5 class="card-title mb-1">
+      <%= user.full_name %>
+    </h5>
+
+    <div class="mb-2">
+      <% if user.teacher_assistant? %>
+        <span class="badge bg-secondary">TA</span>
+      <% else %>
+        <span class="badge bg-primary">Teacher</span>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <% if user.available? %>
+        <span class="badge bg-success">
+          <i class="fas fa-circle"></i> Disponible
+        </span>
+      <% else %>
+        <span class="badge bg-danger">
+          <i class="fas fa-circle"></i> Non disponible
+        </span>
+      <% end %>
+    </div>
+
+    <div class="btn-group w-50">
+      <%= link_to "Voir profil", user_path(user),
+          class: "btn btn-outline-primary btn-sm" %>
+    </div>
+  </div>
+</div>
