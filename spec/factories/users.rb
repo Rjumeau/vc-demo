@@ -9,5 +9,6 @@ FactoryBot.define do
     role { User.roles.except(:batch_manager).keys.sample }
     image_url { Faker::Avatar.image }
     batch_count { rand(1..2100) }
+    available { [true, false].sample }
   end
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "users#index"
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:show]
 end
