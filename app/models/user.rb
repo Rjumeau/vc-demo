@@ -5,9 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :first_name, :last_name, presence: true
 
-  enum role: { teacher: 1, teacher_assistant: 2}
+  enum role: { teacher: 0, teacher_assistant: 1, batch_manager: 3}
 
   def full_name
     "#{first_name} #{last_name}".strip
+  end
+
+  def batch_count_sentence
+    return "Not an alumni" unless batch_count
+    "Batch #{batch_count}"
   end
 end
