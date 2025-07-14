@@ -8,5 +8,6 @@ class AddAttributesToUser < ActiveRecord::Migration[7.1]
     add_column :users, :prefered_topic, :string
     add_column :users, :available, :boolean, default: false
     add_column :users, :batch_count, :integer
+    add_column :users, :lessons_count, :integer
   end
 end

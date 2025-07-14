@@ -10,5 +10,6 @@ FactoryBot.define do
     image_url { Faker::Avatar.image }
     batch_count { rand(1..2100) }
     available { [true, false].sample }
+    lessons_count { rand(1..300) }
   end
 end
