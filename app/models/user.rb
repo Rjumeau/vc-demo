@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   enum role: { teacher: 0, teacher_assistant: 1, batch_manager: 3}
 
+  scope :order_by_tickets_count, -> { order(:tickets_solved_count, :desc)}
+
   def full_name
     "#{first_name} #{last_name}".strip
   end
