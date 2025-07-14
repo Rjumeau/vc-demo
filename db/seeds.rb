@@ -6,7 +6,9 @@ User.destroy_all
 puts "Create users..."
 
 create_list(:user, 30)
-create(:user, :batch_manager)
+
 create(:user, :without_image)
+create(:user, :batch_manager)
+create(:user, :unskilled_teacher)
 
 puts "Done"
