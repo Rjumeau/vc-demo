@@ -22,9 +22,9 @@
      <% end %>
 
      <% if user.available? %>
-       <span class="badge bg-success"><%= user.available_text %></span>
+       <span class="badge bg-success"><%= t("activerecord.attributes.user.available.#{user.available}") %></span>
      <% else %>
-       <span class="badge bg-danger"><%= user.available_text %></span>
+       <span class="badge bg-danger"><%= t("activerecord.attributes.user.available.#{user.available}") %></span>
      <% end %>
    </div>
 
