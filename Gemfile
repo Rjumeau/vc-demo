@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.1.2"
+ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
@@ -52,6 +52,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "draper"
 gem "view_component"
+gem 'rails-i18n'
 
 group :development, :test do
   gem "dotenv-rails"
@@ -74,6 +75,7 @@ group :development do
   # gem "spring"
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+  gem 'benchmark-ips', group: :development
 end
 
 group :test do

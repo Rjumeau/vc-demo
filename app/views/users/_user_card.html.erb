@@ -1,0 +1,54 @@
+<div class="card h-100 shadow-sm">
+ <div class="card-body">
+   <div class="d-flex align-items-center mb-3">
+     <div class="me-3">
+       <%= image_tag user.image_url_displayed,
+                     alt: user.full_name,
+                     width: 60,
+                     height: 60,
+                     class: "rounded-circle object-fit-cover" %>
+     </div>
+     <div class="flex-grow-1">
+       <h5 class="card-title mb-1"><%= user.full_name %></h5>
+       <small class="text-warning fw-bold"><%= user.batch_count_sentence %></small>
+     </div>
+   </div>
+
+   <div class="mb-3">
+     <% if user.teacher_assistant? %>
+       <span class="badge bg-secondary me-2">TA</span>
+     <% else %>
+       <span class="badge bg-primary me-2">Teacher</span>
+     <% end %>
+
+     <% if user.available? %>
+       <span class="badge bg-success">Disponible</span>
+     <% else %>
+       <span class="badge bg-danger">Indisponible</span>
+     <% end %>
+   </div>
+
+   <% if user.prefered_topic.present? %>
+     <div class="mb-3">
+       <small class="text-info">
+         <i class="fas fa-star me-1"></i><%= user.prefered_topic %>
+       </small>
+     </div>
+   <% end %>
+
+   <div class="row text-center mb-3">
+     <div class="col-6">
+       <div class="fw-bold text-primary"><%= user.tickets_solved_count %></div>
+       <small class="text-muted">Tickets</small>
+     </div>
+     <div class="col-6">
+       <div class="fw-bold text-success"><%= user.lessons_count %></div>
+       <small class="text-muted">Cours</small>
+     </div>
+   </div>
+
+   <div class="d-grid">
+     <%= link_to "Voir profil", user_path(user), class: "btn btn-outline-primary btn-sm" %>
+   </div>
+ </div>
+</div>

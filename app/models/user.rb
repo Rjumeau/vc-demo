@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   def batch_count_sentence
     return "Not an alumni" unless batch_count
-    "##{batch_count}"
+    "Batch ##{batch_count}"
   end
 
   def image_url_displayed
