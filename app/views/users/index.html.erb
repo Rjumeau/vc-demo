@@ -9,13 +9,7 @@
   <div class="row">
     <% @users.each do |user| %>
       <div class="col-md-4 mb-4">
-        <%#= render "user_card", user: user %>
-        <%= render Card::UserComponent.new(user: user) do |component| %>
-          <% component.with_actions do %>
-            <%= link_to "Voir profil", user_path(user),
-                class: "btn btn-outline-primary btn-sm" %>
-          <% end %>
-        <% end %>
+        <%= render "user_card", user: user %>
       </div>
     <% end %>
   </div>

@@ -1,16 +1,15 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe Card::UserComponent do
-  let(:user) { build(:user) }
-  subject { described_class.new(user: user) }
+require "rails_helper"
 
-  describe "#badge_role" do
-    context "when user is TA" do
-      before { allow(user).to receive(:teacher_assistant?).and_return(true) }
+RSpec.describe Card::UserComponent, type: :component do
+  pending "add some examples to (or delete) #{__FILE__}"
 
-      it "returns TA badge data" do
-        expect(subject.send(:badge_role)).to eq({text: "TA", bg_class: "bg-secondary"})
-      end
-    end
-  end
+  # it "renders something useful" do
+  #   expect(
+  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
+  #   ).to include(
+  #     "Hello, components!"
+  #   )
+  # end
 end

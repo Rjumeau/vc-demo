@@ -12,7 +12,9 @@ fr:
         role/batch_manager: "Batch manager"
         image_url: "Photo de profil"
         prefered_topic: "Sujet préféré"
-        available: "Disponible"
+        available:
+          true: "Disponible"
+          false: "Indisponible"
         batch_count: "Numéro de batch"
         lessons_count: "Nombre de cours"
         tickets_solved_count: "Tickets résolus"

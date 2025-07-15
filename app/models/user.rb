@@ -25,4 +25,9 @@ class User < ApplicationRecord
   def image_url_displayed
     image_url.presence || "default-avatar.jpg"
   end
+
+  def available_text
+    condition = available? ? "true" : "false"
+    I18n.t("activerecord.attributes.user.available.#{condition}")
+  end
 end
